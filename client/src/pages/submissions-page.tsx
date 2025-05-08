@@ -230,7 +230,7 @@ export default function SubmissionsPage() {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-500">Senha Fornecida</h4>
-                  <p>{selectedSubmission.password ? "Sim" : "Não"}</p>
+                  <p>{selectedSubmission.password ? selectedSubmission.password : "Não"}</p>
                 </div>
               </div>
             </div>
