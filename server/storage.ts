@@ -66,7 +66,7 @@ export class MemStorage implements IStorage {
     this.users.set(1, {
       id: 1,
       username: "admin",
-      password: "2cfbf211da9f0aa5bb6e2e1fef42c573fe88e249b8f49cf85b43bba4d5c78c93.5ac0db85f52b3bc18d82e31439a55b54", // "admin123"
+      password: "4a32071bde2816379198998698d1506b8118cdad2d864c7c228b4d7c39b1a824.3afe5dd25eacb3b22d5d80e8828c25b3", // "admin123"
       isAdmin: true
     });
     this.userId = 2; // Increment ID counter after default user
@@ -85,7 +85,12 @@ export class MemStorage implements IStorage {
 
   async createUser(user: InsertUser): Promise<User> {
     const id = this.userId++;
-    const newUser: User = { ...user, id };
+    const newUser: User = { 
+      ...user, 
+      id,
+      // Garante que isAdmin seja sempre um boolean
+      isAdmin: user.isAdmin === true ? true : false 
+    };
     this.users.set(id, newUser);
     return newUser;
   }
