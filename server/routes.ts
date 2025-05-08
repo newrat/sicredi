@@ -11,9 +11,31 @@ import {
   insertSubmissionSchema
 } from "@shared/schema";
 
+// Função para criar um usuário administrativo padrão
+async function createDefaultAdmin() {
+  try {
+    // Verificar se já existe um usuário admin
+    const existingAdmin = await storage.getUserByUsername("admin");
+    
+    if (!existingAdmin) {
+      await storage.createUser({
+        username: "admin",
+        password: "admin123",
+        isAdmin: true
+      });
+      console.log("Usuário administrativo padrão criado com sucesso!");
+    }
+  } catch (error) {
+    console.error("Erro ao criar usuário administrativo padrão:", error);
+  }
+}
+
 export async function registerRoutes(app: Express): Promise<Server> {
   // Set up authentication routes
   setupAuth(app);
+  
+  // Criar usuário administrativo padrão
+  await createDefaultAdmin();
 
   // API Routes
   // Form submission endpoints
