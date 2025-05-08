@@ -11,6 +11,9 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SicrediLogo } from "@/components/ui/sicredi-logo";
 
+// Import assets
+import sicrediHeroImg from '../assets/sicredi-hero.png';
+
 const loginSchema = z.object({
   username: z.string().min(3, "Nome de usuário precisa ter pelo menos 3 caracteres"),
   password: z.string().min(4, "Senha precisa ter pelo menos 4 caracteres"),
@@ -189,8 +192,16 @@ export default function AuthPage() {
       </div>
       
       {/* Right Column - Hero Image and Info */}
-      <div className="hidden lg:block lg:w-1/2 bg-[#33820D]">
-        <div className="h-full flex flex-col items-center justify-center p-12 text-white">
+      <div className="hidden lg:block lg:w-1/2" 
+        style={{
+          background: `url(${sicrediHeroImg}) no-repeat center center`,
+          backgroundSize: 'cover',
+          backgroundColor: '#33820D'
+        }}>
+        <div className="h-full flex flex-col items-center justify-center p-12 text-white" 
+          style={{ 
+            background: 'linear-gradient(to right, rgba(51, 130, 13, 0.9), rgba(51, 130, 13, 0.85))'
+          }}>
           <div className="max-w-md">
             <h1 className="text-4xl font-bold mb-4">Painel Administrativo Sicredi</h1>
             <p className="text-lg mb-8">

