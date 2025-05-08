@@ -318,11 +318,6 @@ export default function HomePage() {
           <p>
             <span className="font-bold text-[#33820D]">© Banco Cooperativo Sicredi S.A.</span> Todos os direitos reservados
           </p>
-          <p className="text-xs mt-2">
-            <a href="/auth" className="text-gray-400 hover:text-gray-600">
-              Login Admin
-            </a>
-          </p>
         </footer>
       </div>
     </div>
